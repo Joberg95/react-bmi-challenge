@@ -1,26 +1,20 @@
 body {
-  background-color: #f4f4f4;
-  margin: 0;
+  background-color: #EEEE;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 header {
-  background-color: pink;
   position: absolute;
   right: 0;
   top: 0;
   left: 0;  
   text-align: center;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-size: 20px;
+  background-color: #333;
+  color: white;
 }
 
 .main-div {
@@ -30,7 +24,17 @@ code {
 }
 
 .div {
-  display: inline-block;
+  display: block;
+  font-size: 15px;
+}
+
+input {
+  font-size: 15px;
+}
+
+label {
+  margin-right: 1%;
+  font-size: 15px;
 }
 
 footer {
@@ -39,6 +43,12 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: pink;
+  background-color: #333;
   text-align: center;
+  color: white;
+}
+
+#response {
+  margin-top: 2%;
+  text-decoration: underline;
 }
