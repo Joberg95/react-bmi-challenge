@@ -9,7 +9,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  background-color: pink;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;  
+  text-align: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main-div {
+  top: 100px;
+  position: relative;
+  text-align: center;
+}
+
+.div {
+  display: inline-block;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: pink;
+  text-align: center;
 }

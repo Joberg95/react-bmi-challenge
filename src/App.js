@@ -12,13 +12,13 @@ class App extends Component {
   
   render() {
     return (
-      <div>
-        <div>
+      <div className="main-div">
+        <div className="div">
           <label>Weight(kg)</label>
           <input name="weight" value={this.state.weight} onChange={e => this.setState({ weight: e.target.value })} />
         </div>
 
-        <div>
+        <div className="div">
           <label>Height(cm)</label>
           <input name="height" value={this.state.height} onChange={e => this.setState({ height: e.target.value })} />
         </div>
