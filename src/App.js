@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DisplayResult from './Components/displayResult';
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -9,39 +10,47 @@ class App extends Component {
       height: '',
       methodName: 'metric'
     }
-    this.changeToMetric = this.changeToMetric.bind(this);
-    this.changeToImperial = this.changeToImperial.bind(this);
-
   }
 
-  changeToMetric() {
-    this.setState({ methodName: 'metric' });
-  }
-
-  changeToImperial() {
-    this.setState({ methodName: 'imperial' });
+  handleChange(event) {
+    const target = event.target
+    this.setState({
+      [target.name]: target.value
+    })
   }
   
   render() {
+    const methodList = ["metric", "imperial"]
     return (
-      <div className="bmi-converter">
-        <div className="div">
-          <label id="per">Weight {this.state.methodName === 'metric' ? "(kg)" : "(pounds)"}</label>
-          <input name="weight" value={this.state.weight} onChange={e => this.setState({ weight: e.target.value })} />
+      <div className="mainComponent">
+        <div>
+          <label>Weight in {this.state.method === "metric" ? "kg" : "lbs"}</label>
+          <input
+            name="weight"
+            value={this.state.weight}
+            onChange={this.handleChange.bind(this)}/>
         </div>
-
-        <div className="div">
-          <label id="per">Height {this.state.methodName === 'metric' ? "(cm)" : "(inches)"}</label>
-          <input name="height" value={this.state.height} onChange={e => this.setState({ height: e.target.value })} />
+        <div>
+          <label>Height in {this.state.method === "metric" ? "cm" : "inch"}</label>
+          <input
+            name="height"
+            value={this.state.height}
+            onChange={this.handleChange.bind(this)}/>
+           <p>
+            <select onChange={this.handleChange.bind(this)} name="method" id="methodSelect" >
+              {methodList.map(method => (
+                <option  value={method}>{method}</option>
+              ))}
+            </select>
+          </p>
         </div>
-        <button id="metricbutton" onClick={this.changeToMetric}> Metric </button>
-        <button id="imperialbutton" onClick={this.changeToImperial}> Imperial</button>
-        <DisplayResult
-          weight={this.state.weight}
-          height={this.state.height}
+        <DisplayResult 
+        weight={this.state.weight} 
+        height={this.state.height} 
+        method={this.state.method}
         />
       </div>
-    )
+    );
   }
 }
 

@@ -7,6 +7,8 @@ export const bmiCalculation = (weight, height, method) => {
     height = isNaN(height) ? 0 : height;
   
     bmi = weight / (height / 100 * height / 100);
+
+    bmi = method === 'metric' ? bmi : bmi/14.33;
   
     let finalBMI = parseFloat(bmi.toFixed(2));
     let BMIMessage = setBMIMessage(finalBMI)
@@ -17,7 +19,7 @@ export const bmiCalculation = (weight, height, method) => {
     }      
   }
   
-  const setBMIMessage = (finalBMI) => {
+  const setBMIMessage = finalBMI => {
     if (finalBMI < 18.5) {
       return "Underweight";
     }
