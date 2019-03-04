@@ -9,14 +9,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+/* header {
   background-color: pink;
   position: absolute;
   right: 0;
   top: 0;
   left: 0;  
   text-align: center;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
