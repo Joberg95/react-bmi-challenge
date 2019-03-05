@@ -22,11 +22,10 @@ describe('<App />', () => {
   })
 
   it('can change method', () => {
-    const onChangeValue = stub();
-    const component = shallow(<App onChangeValue={onChangeValue} />);
+    const component = shallow(<App />);
     const weightLabel = <label>Weight(lbs)</label>;
     const heightLabel = <label>Height(inches)</label>;
-    component.find("methodSelect").prop({method})({target: {value:'imperial'}});
+    component.setState({method: "imperial"})
     expect(component.contains(weightLabel)).toEqual(true);
     expect(component.contains(heightLabel)).toEqual(true);
   })
@@ -50,11 +49,3 @@ describe('<DisplayResult />', () => {
     expect(component.text()).toBe('')
   })
 })
-
-// describe('<MethodSelect />', () => {
-//   it('has two methods to choose from', () => {
-//     const component = mount(<MethodSelect />);
-//     const selector = component.find('#method').instance()
-//     expect(selector.options.length).toEqual(2)
-//   }
-// )})
