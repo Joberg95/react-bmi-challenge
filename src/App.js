@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import DisplayResult from './Components/displayResult';
-
+import Header from './header.js'
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div className="mainComponent">
         <div>
+          <Header/>
           <label>Weight in {this.state.method === "metric" ? "kg" : "lbs"}</label>
           <input
             name="weight"
