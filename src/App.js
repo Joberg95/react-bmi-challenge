@@ -24,8 +24,10 @@ class App extends Component {
     const methodList = ["metric", "imperial"]
     return (
       <div className="mainComponent">
+      <div className="Header">
+        <Header/>
+      </div>
         <div>
-          <Header/>
           <label>Weight in {this.state.method === "metric" ? "kg" : "lbs"}</label>
           <input
             name="weight"
