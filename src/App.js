@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       weight: '',
       height: '',
-      methodName: 'metric'
+      method: 'metric'
     }
   }
 

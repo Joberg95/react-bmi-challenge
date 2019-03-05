@@ -13,7 +13,7 @@ describe('BMI Converter', () => {
 
     describe('Metric method', async () => {
         beforeEach( async () => {
-            await page.click('button[id="metricbutton"]')
+            await page.select('select[id="methodSelect"]', 'metric')
             await page.type('input[name="weight"]', '95')
             await page.type('input[name="height"]', '186')
         })
@@ -29,7 +29,7 @@ describe('BMI Converter', () => {
 
     describe('Imperial method', async () => {
         beforeEach( async () => {
-            await page.click('button[id="imperialbutton"]')
+            await page.select('select[id="methodSelect"]', 'imperial')
             await page.type('input[name="weight"]', '200')
             await page.type('input[name="height"]', '73')
         })
@@ -39,7 +39,7 @@ describe('BMI Converter', () => {
         })
 
         it('displays BMI value', async () => {   
-            await expect(page).toMatch('BMI of 26.38')
+            await expect(page).toMatch('BMI of 26.19')
         })
     })
 }); 
